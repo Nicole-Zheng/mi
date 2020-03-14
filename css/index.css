@@ -1,0 +1,269 @@
+/* 主页独有的样式表 */
+/* 顶部导航条的容器 */
+.topbar-wrapper{
+    /* 设置宽度是全屏 */
+    width: 100%;
+    height: 40px;
+    /* 设置行高，行高的目的是为了文字垂直居中，写了行高高度可以不写了 */
+    line-height: 40px;
+    background-color: #333;
+}
+/* 设置超链接颜色 */
+.topbar a{
+    font-size: 12px;
+    color: #b0b0b0;
+    /* 让a的上下都可以点 */
+    display: block;
+}
+.topbar a:hover{
+    color: #fff;
+}
+/* 设置中间的分割线 */
+.topbar .line{
+    color: #424242;
+    font-size: 12px;
+    margin: 0 8px;
+    margin-top: -1px;
+}
+/* 设置左侧导航栏向左浮动 */
+.service,.topbar li{
+    float: left;
+}
+/* 设置app二维码下拉 */
+.app .qrcode{
+    display: none;
+    position: absolute;
+    width: 124px;
+    height: 148px;
+    background-color: #fff;
+    /* 之前设置的行高是40px，小米商城app几个字被挤下去了 */
+    line-height: 1;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    font-size: 14px;
+    color: #333;
+    left:-40px;
+    z-index: 999;
+}
+
+/* .app:hover .qrcode
+.app:hover::after{
+    display: block;
+} */
+/* 设置二维码图片 */
+.app .qrcode img{
+    width: 90px;
+    margin: 17px;
+    margin-bottom: 12px;
+}
+/* 下载app  设置相对定位 */
+.app{
+    position: relative;
+}
+/* 设置app下的三角形 */
+li:hover .app::after{
+    display: block;
+    content:'';
+    width: 0;
+    height: 0;
+    /* display: block; */
+    /* 去除行高影响 */
+    line-height: 1px;
+    /* 设置四个方向的边框 */
+    border:8px solid transparent;
+    /* 去除上边框 */
+    border-top: none;
+    /* 单独设置下边框的颜色 */
+    border-bottom-color:#fff;
+    /* 设置绝对定位 */
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    margin-top: 32px;
+    margin-left: 14px;
+}
+li:hover> .app .qrcode{
+    display: block;
+}
+/* 设置右侧导航栏 */
+.shop-cart,.user-info{
+    float:right;
+}
+
+.shop-cart{
+    margin-left: 25px;
+}
+/* 设置购物车样式 */
+.shop-cart a{
+    width: 120px;
+    background-color: #424242;
+    text-align: center;
+    position: relative;
+}
+.shop-cart:hover a{
+    background-color: #fff;
+    color: #ff6700;
+
+}
+/* 购物车图标 */
+.shop-cart i{
+    margin-right: 4px;
+}
+/* 设置购物车下拉条 */
+.open-cart{
+    position: absolute;
+    width: 316px;
+    height: 100px;
+    line-height: 92px;
+    background-color: #fff;
+    color: #424242;
+    text-align: center;
+    left:-196px;
+    font-size: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    display: none;
+    z-index: 999;
+}
+.cart:hover .open-cart{
+    display: block;
+}
+
+
+/* 设置头部 */
+.header{
+    height: 100px;
+    /* background-color: rosybrown;  */
+}
+/* 设置logo的h1 */
+.header .logo{
+    float: left;
+    margin-top: 22px;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    position: relative;
+    /* 文本挤出去，隐藏logo里的文字，但搜索引擎能搜到 */
+    text-indent:-9999px;
+}
+/* 统一设置logo里的超链接 ，设置mi图片*/
+.header .logo a{
+    position: absolute;
+    width: 55px;
+    height: 55px;
+   
+    background-color: #ff6700;
+    background-image: url(../img/mi-logo.png);
+    background-position: center;
+    left: 0;
+    transition: left 0.2s;
+}
+/* 设置home图片 */
+.header .logo .home{
+    left:-55px;
+    background-image: url(../img/mi-home.png);
+}
+/* 设置logo图片hover */
+.header .logo:hover .mi{
+    left: 55px;
+}
+.header .logo:hover .home{
+    left: 0;
+}
+/* 设置中间的导航条 */
+.header .nav-wrapper{
+    float: left;
+    width: 792px;
+    height: 100px;
+    /* background-color: red; */
+    margin-left: 7px;
+}
+.header .nav-wrapper ul{
+    padding-left: 58px;
+}
+.nav-wrapper li{
+    float: left;
+}
+.header-wrapper{
+    position: relative;
+    /* background-color: red; */
+}
+.header .nav{
+    line-height: 100px;
+}
+.nav-wrapper li a{
+    font-size: 16px;
+    margin-right: 20px;
+    display: block;
+}
+.nav-wrapper li a:hover{
+    color: #ff6700;
+}
+/* 隐藏全部商品 */
+.all-goods{
+    visibility: hidden;
+}
+/* 设置弹出层 */
+.nav-wrapper .goods-info{
+    /* height: 228px; */
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    /* background-color:yellow; */
+    /* border-top: 1px solid rgb(224, 224, 224); */
+    /* box-shadow: 0 5px 3px rgba(0,0,0,.2); */
+    position: absolute;
+    left:0;
+    top:100px;
+    transition: height 0.3s;
+    z-index:9999;
+}
+.nav li:not(:first-of-type):not(:nth-child(10)):not(:nth-child(9)):hover ~ .goods-info,
+.goods-info:hover{
+    height: 228px;
+    border-top: 1px solid rgb(224, 224, 224);
+    box-shadow: 0 5px 3px rgba(0,0,0,.2);
+}
+/* 设置搜索框的容器 */
+.search-wrapper{
+    width: 296px;
+    height: 50px;
+    /* background-color: red; */
+    float: right;
+    margin-top: 25px;
+    position: relative;
+}
+.search-wrapper .search-inp{
+    box-sizing: border-box;
+    width: 244px;
+    border: none;
+    float: left;
+    padding:0;
+    height:50px;
+    padding: 0 10px;
+    font-size: 16px;
+    border: 1px solid rgb(224, 224, 224);
+
+}
+/* 设置input获取焦点后的样式 */
+.search-wrapper .search-inp:focus,
+.search-wrapper .search-inp:focus + button{
+    outline: 1px #ff6700 solid;
+}
+.search-wrapper .search-btn{
+    float: left;
+    height: 50px;
+    width: 52px;
+    padding: 0;
+    border: 1px solid rgb(224, 224, 224);
+    border-left:none ;
+    background-color: #fff;
+    color: #616161;
+    font-size: 16px;
+    border-left: 1px solid rgb(224, 224, 224);
+}
+.search-wrapper .search-btn:hover{
+    background-color: #ff6700;
+    color: #fff;
+    border: none;
+}
